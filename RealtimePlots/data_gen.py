@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 idx = 0
-current_time = datetime.now()
+current_time = datetime.now().strftime("%H:%M:%S") 
 oob = 1
 
 fieldnames = ["idx", "time", "OOB"]
@@ -29,7 +29,7 @@ while True:
         print(idx, current_time, oob)
 
         idx += 1
-        current_time = datetime.now()
+        current_time = datetime.now().strftime("%H:%M:%S") 
         oob = oob + random.uniform(-0.2, 0.3)
         if idx%10 == 0 and oob > 8:
             oob -= 0.3
